@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="mx.tecnm.tepic.ladm_u3_practica1_garciamoreno.ui.consultar.ConsultarFragment"
+        android:label="Consultar"
+        tools:layout="@layout/fragment_consultar" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="mx.tecnm.tepic.ladm_u3_practica1_garciamoreno.ui.insertar.InsertarFragment"
+        android:label="Insertar"
+        tools:layout="@layout/fragment_insertar" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="mx.tecnm.tepic.ladm_u3_practica1_garciamoreno.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

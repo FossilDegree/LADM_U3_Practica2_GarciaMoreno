@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "172984087117",
+    "project_id": "ladm-u3-practica2-garciamoreno",
+    "storage_bucket": "ladm-u3-practica2-garciamoreno.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172984087117:android:9e448e335b61a6c4cf6204",
+        "android_client_info": {
+          "package_name": "mx.tecnm.tepic.ladm_u3_practica1_garciamoreno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172984087117-cdfpt7338d78esurdhpics9mv6jj7m75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGEusKbgxLdlcQaRZttwTIB90Obfzud-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172984087117-cdfpt7338d78esurdhpics9mv6jj7m75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
