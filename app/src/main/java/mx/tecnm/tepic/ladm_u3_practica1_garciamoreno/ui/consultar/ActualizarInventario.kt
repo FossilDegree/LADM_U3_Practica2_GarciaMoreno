@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.tecnm.tepic.ladm_u3_practica1_garciamoreno.databinding.ActivityActualizarInventarioBinding
 import mx.tecnm.tepic.ladm_u3_practica1_garciamoreno.ui.dialog.DatePickerFragment
+import java.text.SimpleDateFormat
 
 class ActualizarInventario : AppCompatActivity() {
     lateinit var binding: ActivityActualizarInventarioBinding
@@ -24,7 +25,7 @@ class ActualizarInventario : AppCompatActivity() {
                 binding.codigobarras.setText(it.getString("CODIGO"))
                 binding.tipoequipo.setText(it.getString("EQUIPO"))
                 binding.caracteristicas.setText(it.getString("CARACTERISTICAS"))
-                binding.fecha.setText(it.getDate("FECHA").toString())
+                binding.fecha.setText(it.getString("FECHA"))
             }
             .addOnFailureListener {
                 AlertDialog.Builder(this)
@@ -36,15 +37,17 @@ class ActualizarInventario : AppCompatActivity() {
         }
         binding.actualizar.setOnClickListener {
             val bd = FirebaseFirestore.getInstance()
+            val fecha = SimpleDateFormat("yyyy-MM-dd").parse(binding.fecha.text.toString())
             bd.collection("INVENTARIO")
                 .document(id)
                 .update("CODIGO",binding.codigobarras.text.toString(),
                     "EQUIPO", binding.tipoequipo.text.toString(),
                 "CARACTERISTICAS",binding.caracteristicas.text.toString(),
-                "FECHA",binding.fecha.text.toString())
+                "FECHA", binding.fecha.text.toString())
                 .addOnSuccessListener {
                     Toast.makeText(this, "ÉXITO AL ACTUALIZAR", Toast.LENGTH_LONG)
                         .show()
+
                     binding.codigobarras.text.clear()
                     binding.tipoequipo.text.clear()
                     binding.caracteristicas.text.clear()

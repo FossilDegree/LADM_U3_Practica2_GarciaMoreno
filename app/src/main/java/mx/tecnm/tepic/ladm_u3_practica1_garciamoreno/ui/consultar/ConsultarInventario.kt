@@ -38,10 +38,11 @@ class ConsultarInventario : AppCompatActivity() {
                     var arr = ArrayList<String>()
                     listaIDs.clear()
                     for(documento in query!!){
+
                         var cadena = "CODIGO: ${documento.getString("CODIGO")}\n"+
                                 "EQUIPO: ${documento.getString("EQUIPO")}\n" +
                                 "CARACTERISTICAS: ${documento.getString("CARACTERISTICAS")}\n" +
-                                "FECHA: ${documento.getDate("FECHA").toString()}\n"
+                                "FECHA: ${documento.getString("FECHA")}\n"
                         arr.add(cadena)
                         listaIDs.add(documento.id)
                     }
@@ -112,7 +113,7 @@ class ConsultarInventario : AppCompatActivity() {
                         var cadena = "CODIGO: ${documentos.getString("CODIGO")}\n"+
                                 "EQUIPO: ${documentos.getString("EQUIPO")}\n" +
                                 "CARACTERISTICAS: ${documentos.getString("CARACTERISTICAS")}\n" +
-                                "FECHA: ${documentos.getDate("FECHA").toString()}\n"
+                                "FECHA: ${documentos.getString("FECHA")}\n"
                         arr.add(cadena)
                         listaIDs.add(documentos.id)
                     }

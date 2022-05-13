@@ -32,13 +32,13 @@ class InsertarInventario : AppCompatActivity() {
         binding.insertar.setOnClickListener {
 
 
-            val fecha = SimpleDateFormat("yyyy-MM-dd").parse(binding.fecha.text.toString())
+            //¡val fecha = SimpleDateFormat("yyyy-MM-dd").parse(binding.fecha.text.toString())
             val bd = FirebaseFirestore.getInstance()
             val datos = hashMapOf(
                 "CODIGO" to binding.codigobarras.text.toString(),
                 "EQUIPO" to binding.tipoequipo.text.toString(),
                 "CARACTERISTICAS" to binding.caracteristicas.text.toString(),
-                "FECHA" to fecha
+                "FECHA" to binding.fecha.text.toString()
             )
             bd.collection("INVENTARIO")
                 .add(datos)
